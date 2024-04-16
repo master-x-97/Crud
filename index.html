@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>first js</title>
+</head>
+<body>
+  <div class="container py-4">
+
+    <input type="hidden" id="productID">
+    <label for="productName">product name</label>
+    <input type="text" class="form-control mb-3 " id="productName" >
+
+    <label for="productPrice">product price</label>
+    <input type="number" class="form-control mb-3 " id="productPrice" >
+
+    <label for="productCategory">product category</label>
+    <input type="text" class="form-control mb-3 " id="productCategory" >
+
+    <label for="productDesc">product desc</label>
+    <input type="text" class="form-control mb-3 " id="productDesc" >
+
+    <label for="mezo">mezo</label>
+    <textarea type="text" class="form-control mb-3 " id="mezo" ></textarea>
+
+    <button id="addBtn" onclick="addproduct()" class=" w-100 btn btn-lg btn-info d-block">add product</button>
+    <button id="upDateBtn" onclick="replaceProduct()"  class=" w-100 btn btn-lg btn-warning my-3 d-none ">UpDate product</button>
+
+  </div>
+  <div class="w-100 mx-auto my-3">
+    <input type="text" class="form-control w-75 my-3 m-auto" oninput="searchProducts(this.value)" id="searchInput" placeholder="search by name...">            
+    <!-- oninput="console.log('hello')"             مع كل تغير يحدث في هذا الانبوت ضع في الكونسول هالوو-->
+    <!--(this.value) الزيس في هذه الحاله تكون شايله العنصر الذي تم عليه الافينت الي هو هنا الان انبوت  -->
+    <table class="table text-center">
+      <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>category</th>
+        <th>Desc</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </thead>
+
+      <tbody id="tablebody">
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/myFile.js"></script>
+</body>
+</html>
