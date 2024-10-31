@@ -39,7 +39,10 @@ function addproduct()
     name:productNameInput.value,
     price:productPriceInput.value,
     category:productCategoryInput.value,
-    desc:productDescInput.value
+    desc:productDescInput.value,
+    datemonth:new Date().getMonth()+1,
+    dateDay:new Date().getDate(),
+    dateYear:new Date().getFullYear(),
   }
   if (product.name == '' || product.price == ""){
     alert('enter value')
@@ -71,8 +74,9 @@ function displayProducts(arr)
     boxs +=`<tr> 
     <td class="text-light fw-bold">${arr[i].name}</td>
     <td class="text-light fw-bold">${arr[i].price}$</td>
-    <tdclass="text-light fw-bold" }${arr[i].category}</td>
-    <td class="text-light fw-bold" }${arr[i].desc}</td>
+    <td class="text-light fw-bold"}>${arr[i].category}</td>
+    <td class="text-light fw-bold"}>${arr[i].desc}</td>
+    <td class="text-light fw-bold"}>${arr[i].dateDay}/${arr[i].datemonth}/${arr[i].dateYear}</td>
     <td><button onclick="setFormForUpDate(${i})" class="btn btn-outline-warning">Update</button></td>
     <td><button onclick="deleteProduct(${i});" class="btn btn-outline-danger ">Delete</button></td>
   </tr>`;
