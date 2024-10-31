@@ -71,8 +71,8 @@ function displayProducts(arr)
     boxs +=`<tr> 
     <td class="text-light fw-bold">${arr[i].name}</td>
     <td class="text-light fw-bold">${arr[i].price}</td>
-    <td>${arr[i].category}</td>
-    <td>${arr[i].desc}</td>
+    <td>class="text-light fw-bold" ${arr[i].category}</td>
+    <td> class="text-light fw-bold" ${arr[i].desc}</td>
     <td><button onclick="setFormForUpDate(${i})" class="btn btn-outline-warning">Update</button></td>
     <td><button onclick="deleteProduct(${i});" class="btn btn-outline-danger ">Delete</button></td>
   </tr>`;
