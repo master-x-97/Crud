@@ -40,18 +40,21 @@ function addproduct()
     price:productPriceInput.value,
     category:productCategoryInput.value,
     desc:productDescInput.value
-
-
+  }
+  if (product.name == '' || product.price == ""){
+    alert('enter value')
+    
+  }else{
+    productContainer.push(product)
+    displayProducts(productContainer);
   }
   // الفاليو خاصه بقيم الفورم من الانبوت وخيرها فقط
-  productContainer.push(product)
-  displayProducts(productContainer);
   console.log(productContainer);
   // clearform();
 localStorage.setItem("products", JSON.stringify(productContainer))
 
-
 }
+
 function clearform() { // وظيفة هذه الفانكشن هي تفريخ الخانات بعد اضافة البيانات ورفعها ويتم استدعائها في الفورم المطلوبه
   productNameInput.value="";
   productPriceInput.value="";
@@ -66,8 +69,8 @@ function displayProducts(arr)
   for(var i= 0;i < arr.length;i++)
   {
     boxs +=`<tr> 
-    <td>${arr[i].name}</td>
-    <td>${arr[i].price}</td>
+    <td class="text-light fw-bold">${arr[i].name}</td>
+    <td class="text-light fw-bold">${arr[i].price}</td>
     <td>${arr[i].category}</td>
     <td>${arr[i].desc}</td>
     <td><button onclick="setFormForUpDate(${i})" class="btn btn-outline-warning">Update</button></td>
@@ -136,13 +139,4 @@ function replaceProduct()
 }
 
 
-// deleteProduct(i);
 
-// var productContainer = [ الداتا القادمه من الداتا بيز تكون بهذا الشكل
-//   {name1: "lg",price12: 5000 ,category1 : "mobile",desc: "good product"},"toshiba"
-//   {name1: "lg",price12: 5000 ,category1 : "mobile",desc: "good product"},"toshiba"
-//   {name1: "lg",price12: 5000 ,category1 : "mobile",desc: "good product"},"toshiba"
-//   {name1: "lg",price12: 5000 ,category1 : "mobile",desc: "good product"},"toshiba"
-//   {name1: "lg",price12: 5000 ,category1 : "mobile",desc: "good product"},"toshiba"
-//   {name1: "lg",price12: 5000 ,category1 : "mobile",desc: "good product"},"toshiba"
-// ]
